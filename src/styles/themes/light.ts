@@ -1,45 +1,60 @@
 import { createTheme } from '@material-ui/core/styles';
-import { lighten, shade } from 'polished';
 
 /* eslint-disable import/no-anonymous-default-export */
 
-export default {
+export const light = {
   title: 'light',
 
-  colors: {
-    primary: '#019562',
-    secondary: '#00c4a6',
-    error: '#c53030',
-
-    background: '#ccc',
-    backgroundComponents: '#eee',
-
-    text: '#312e38',
-    textSecondary: '#666360',
-    textTertiary: '#fff',
-    textError: '#fff',
-
-    borderComponents: '#aaa',
-    shadow: '#aaa',
-
-    inputBackground: '#fff',
+  palette: {
+    primary: {
+      light: '#3aae6d',
+      main: '#2e8b57',
+      dark: '#256f46',
+      contrastText: '#f7f7f7',
+    },
+    secondary: {
+      light: '#d3d3d3',
+      main: '#a9a9a9',
+      dark: '#878787',
+      contrastText: '#565656',
+    },
+    background: {
+      default: '#f7f7f7',
+      paper: '#fff',
+    },
+    table: {
+      lineHeader: '#f7f7f7',
+      status: {
+        background: {
+          active: '#d1ead1',
+          inactive: '#f5cfcc',
+        },
+        text: {
+          active: '#7cbc7f',
+          inactive: '#c56e67',
+        },
+      },
+    },
   },
 };
 
 export const theme = createTheme({
   palette: {
     primary: {
-      light: lighten(0.2, '#019562'),
-      main: '#019562',
-      dark: shade(0.2, '#019562'),
-      contrastText: '#fff',
+      light: '#3aae6d',
+      main: '#2e8b57',
+      dark: '#256f46',
+      contrastText: '#f7f7f7',
     },
     secondary: {
-      light: '#1abcc4',
-      main: '#10959c',
-      dark: '#027075',
-      contrastText: '#000',
+      light: '#d3d3d3',
+      main: '#a9a9a9',
+      dark: '#878787',
+      contrastText: '#565656',
     },
-    divider: '#fff',
+    background: {
+      default: '#f7f7f7',
+      paper: '#fff',
+    },
   },
 });
