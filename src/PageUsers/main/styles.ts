@@ -30,26 +30,23 @@ export const Title = styled.p`
   font-weight: 500;
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 13px;
   padding: 0 10px;
   margin: 0 10px;
+  border: 0;
+  outline: 0;
   border-radius: 3px;
+  color: ${props => props.theme.palette.primary.contrastText};
   background-color: ${props => props.theme.palette.primary.main};
   transition: background-color 0.2s;
   box-shadow: 0px 0px 5px ${props => props.theme.palette.secondary.light};
 
   svg {
     margin-right: 5px;
-    color: ${props => props.theme.palette.primary.contrastText};
-  }
-
-  button {
-    border: 0;
-    background: transparent;
     color: ${props => props.theme.palette.primary.contrastText};
   }
 
