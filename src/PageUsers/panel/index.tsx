@@ -1,7 +1,6 @@
 import React from 'react';
 import { FiClipboard, FiEdit, FiKey, FiRotateCcw } from 'react-icons/fi';
 
-import MenuMaterialUI from '../../MaterialUI';
 import { InputSearch } from '../main/styles';
 
 import {
@@ -19,7 +18,6 @@ import {
 const PanelUser: React.FC = () => {
   return (
     <Container>
-      <MenuMaterialUI />
       <Toolbar>
         <Title>{`Usuários > Joãozinho da Direct`}</Title>
       </Toolbar>

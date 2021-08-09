@@ -2,8 +2,6 @@ import React from 'react';
 import { FiPlusSquare } from 'react-icons/fi';
 import { v4 } from 'uuid';
 
-import MenuMaterialUI from '../../MaterialUI';
-
 import {
   Container,
   Table,
@@ -63,7 +61,6 @@ const users: IUser[] = [
 const PageMainUsers: React.FC = () => {
   return (
     <Container>
-      <MenuMaterialUI />
       <Toolbar>
         <Title>Usuários</Title>
         <div>

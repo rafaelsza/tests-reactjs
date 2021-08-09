@@ -2,8 +2,6 @@ import React, { useRef, useState, useMemo, useEffect, MouseEvent } from 'react';
 import { useTransition } from '@react-spring/web';
 import { Main, Container, Message, Button, Content, Life } from './styles';
 
-import MenuMaterialUI from '../../MaterialUI';
-
 /* eslint-disable react/require-default-props */
 /* eslint-disable no-plusplus */
 /* eslint-disable react/no-children-prop */
@@ -93,7 +91,6 @@ const AppNotification: React.FC = () => {
 
   return (
     <>
-      <MenuMaterialUI />
       <Main onClick={handleClick}>
         Click here to create notifications
         <MessageHub
