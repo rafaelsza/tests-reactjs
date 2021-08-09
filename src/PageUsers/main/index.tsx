@@ -2,7 +2,7 @@ import React from 'react';
 import { FiPlusSquare } from 'react-icons/fi';
 import { v4 } from 'uuid';
 
-import MaterialUIPage from '../../MaterialUI';
+import MenuMaterialUI from '../../MaterialUI';
 
 import {
   Container,
@@ -62,56 +62,55 @@ const users: IUser[] = [
 
 const PageMainUsers: React.FC = () => {
   return (
-    <MaterialUIPage>
-      <Container>
-        <Toolbar>
-          <Title>Usuários</Title>
-          <div>
-            <Button type="button">
-              <FiPlusSquare />
-              Criar novo
-            </Button>
+    <Container>
+      <MenuMaterialUI />
+      <Toolbar>
+        <Title>Usuários</Title>
+        <div>
+          <Button type="button">
+            <FiPlusSquare />
+            Criar novo
+          </Button>
 
-            <InputSearch>
-              <input id="search" type="text" placeholder="Pesquisar" />
-            </InputSearch>
-          </div>
-        </Toolbar>
+          <InputSearch>
+            <input id="search" type="text" placeholder="Pesquisar" />
+          </InputSearch>
+        </div>
+      </Toolbar>
 
-        <Table>
-          <thead>
-            <tr>
-              <th style={{ width: 100 }}>Avatar</th>
-              <th style={{ width: 250 }}>Nome</th>
-              <th style={{ width: 150 }}>Nome de usuário</th>
-              <th style={{ width: 200 }}>Setor</th>
-              <th style={{ width: 150 }}>Função</th>
-              <th style={{ width: 150 }}>Data de nascimento</th>
-              <th style={{ width: 80 }}>Status</th>
+      <Table>
+        <thead>
+          <tr>
+            <th style={{ width: 100 }}>Avatar</th>
+            <th style={{ width: 250 }}>Nome</th>
+            <th style={{ width: 150 }}>Nome de usuário</th>
+            <th style={{ width: 200 }}>Setor</th>
+            <th style={{ width: 150 }}>Função</th>
+            <th style={{ width: 150 }}>Data de nascimento</th>
+            <th style={{ width: 80 }}>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map(user => (
+            <tr key={user.id}>
+              <td>
+                <img src={user.avatar_url} alt={user.name} />
+              </td>
+              <td>{user.name}</td>
+              <td>{user.username}</td>
+              <td>{user.sector}</td>
+              <td>{user.occupation}</td>
+              <td>{new Date(user.birth_date).toLocaleDateString()}</td>
+              <td>
+                <Status isActive={user.status}>
+                  {user.status ? 'Ativo' : 'Inativo'}
+                </Status>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {users.map(user => (
-              <tr key={user.id}>
-                <td>
-                  <img src={user.avatar_url} alt={user.name} />
-                </td>
-                <td>{user.name}</td>
-                <td>{user.username}</td>
-                <td>{user.sector}</td>
-                <td>{user.occupation}</td>
-                <td>{new Date(user.birth_date).toLocaleDateString()}</td>
-                <td>
-                  <Status isActive={user.status}>
-                    {user.status ? 'Ativo' : 'Inativo'}
-                  </Status>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Container>
-    </MaterialUIPage>
+          ))}
+        </tbody>
+      </Table>
+    </Container>
   );
 };
 export default PageMainUsers;
