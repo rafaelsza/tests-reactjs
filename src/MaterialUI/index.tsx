@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { AppBar, Tabs, Tab } from '@material-ui/core';
 import { FiCpu, FiMessageSquare, FiUsers } from 'react-icons/fi';
 
@@ -14,8 +14,6 @@ const MenuMaterialUI: React.FC = ({ children }) => {
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
-
-  console.log(value);
 
   return (
     <Container>
